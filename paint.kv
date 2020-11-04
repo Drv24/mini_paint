@@ -1,0 +1,523 @@
+#:import C kivy.utils.get_color_from_hex
+
+<RButton@Button>:
+	font_size: 15
+	bold: True
+	background_normal: 'rbn.png'
+	background_down: 'rbd.png'
+	border: (2,10,2,10)
+
+<ColorButton@RadioButton>:
+	group: 'color'
+	on_release: app.canvas_widget.set_color(self.background_color)
+	background_normal: 'bn.png'
+	background_down: 'bd.png'	
+	border: (3,3,3,3)
+	height: 40
+	width: 50
+
+<LineWidthButton@RadioButton>:
+	group: 'line_width'
+	on_release: app.canvas_widget.set_line_width(self.text)
+	color: C('#2C3E50')
+	background_color: C('#ECF0F1')
+	background_normal: 'bn.png'
+	background_down: 'bd.png'	
+	border: (3,3,3,3)
+	height: 40
+	width: 30
+	font_size: 15
+
+<Canvas>:
+
+	RButton:
+		text: 'Change Background'
+		right: root.right
+		y: root.height - 30
+		width: 150
+		height: 30
+		on_press: app.canvas_widget.set_bgcolor()
+
+	RButton:
+		id: b1
+		text: 'Clear All'
+		right: root.right
+		y: root.height - 70
+		width: 60
+		height: 30
+		on_press: root.clr()
+	
+	RButton:
+		text: 'Eraser'
+		right: root.right
+		y: root.height - 110
+		width: 60
+		height: 30
+		on_press: app.canvas_widget.set_color(app.canvas_widget.current_bgcolor)
+
+
+
+	BoxLayout:
+		orientation: 'horizontal'
+		width: root.width - 100
+		height: 20
+		padding: 2
+		x: 100
+		y: 0
+		LineWidthButton:
+			text: 'Thin'
+			state: 'down'
+		LineWidthButton:
+			text: 'Normal'
+		LineWidthButton:
+			text: 'Thick'
+
+	BoxLayout:
+		orientation: 'vertical'
+		height: root.height
+		x: 0
+		width: 20	
+
+		ColorButton:
+			background_color: C("#f9ebea")
+			state: 'down'
+		ColorButton:
+			background_color: C("#f2d7d5")
+		ColorButton:
+			background_color: C("#e6b0aa")
+		ColorButton:
+			background_color: C("#d98880")
+		ColorButton:
+			background_color: C("#cd6155")
+		ColorButton:
+			background_color: C("#c0392b")
+		ColorButton:
+			background_color: C("#a93226")
+		ColorButton:
+			background_color: C("#922b21")
+		ColorButton:
+			background_color: C("#7b241c")
+		ColorButton:
+			background_color: C("#641e16")
+		ColorButton:
+			background_color: C("#fdedec")
+		ColorButton:
+			background_color: C("#fadbd8")
+		ColorButton:
+			background_color: C("#f5b7b1")
+		ColorButton:
+			background_color: C("#f1948a")
+		ColorButton:
+			background_color: C("#ec7063")
+		ColorButton:
+			background_color: C("#e74c3c")
+		ColorButton:
+			background_color: C("#cb4335")
+		ColorButton:
+			background_color: C("#b03a2e")
+		ColorButton:
+			background_color: C("#943126")
+		ColorButton:
+			background_color: C("#78281f")					
+		ColorButton:
+			background_color: C("#f5eef8")
+		ColorButton:
+			background_color: C("#ebdef0")
+		ColorButton:
+			background_color: C("#d7bde2")
+		ColorButton:
+			background_color: C("#c39bd3")
+		ColorButton:
+			background_color: C("#af7ac5")
+		ColorButton:
+			background_color: C("#9b59b6")
+		ColorButton:
+			background_color: C("#884ea0")
+		ColorButton:
+			background_color: C("#76448a")
+		ColorButton:
+			background_color: C("#633974")
+		ColorButton:
+			background_color: C("#512e5f")
+		ColorButton:
+			background_color: C("#f4ecf7")
+		ColorButton:
+			background_color: C("#e8daef")
+		ColorButton:
+			background_color: C("#d2b4de")
+		ColorButton:
+			background_color: C("#bb8fce")
+		ColorButton:
+			background_color: C("#a569bd")
+		ColorButton:
+			background_color: C("#8e44ad")
+		ColorButton:
+			background_color: C("#7d3c98")
+		ColorButton:
+			background_color: C("#6c3483")
+		ColorButton:
+			background_color: C("#5b2c6f")
+		ColorButton:
+			background_color: C("#4a235a")
+
+	BoxLayout:
+		orientation: 'vertical'
+		height: root.height
+		x: 20
+		width: 20
+
+		ColorButton:
+			background_color: C("#eaf2f8")
+		ColorButton:
+			background_color: C("#d4e6f1")
+		ColorButton:
+			background_color: C("#a9cce3")
+		ColorButton:
+			background_color: C("#7fb3d5")
+		ColorButton:
+			background_color: C("#5499c7")
+		ColorButton:
+			background_color: C("#2980b9")
+		ColorButton:
+			background_color: C("#2471a3")
+		ColorButton:
+			background_color: C("#1f618d")
+		ColorButton:
+			background_color: C("#1a5276")
+		ColorButton:
+			background_color: C("#154360")
+		ColorButton:
+			background_color: C("#ebf5fb")
+		ColorButton:
+			background_color: C("#d6eaf8")
+		ColorButton:
+			background_color: C("#aed6f1")
+		ColorButton:
+			background_color: C("#85c1e9")
+		ColorButton:
+			background_color: C("#5dade2")
+		ColorButton:
+			background_color: C("#3498db")
+		ColorButton:
+			background_color: C("#2e86c1")
+		ColorButton:
+			background_color: C("#2874a6")
+		ColorButton:
+			background_color: C("#21618c")
+		ColorButton:
+			background_color: C("#1b4f72")
+		ColorButton:
+			background_color: C("#e8f8f5")
+		ColorButton:
+			background_color: C("#d1f2eb")
+		ColorButton:
+			background_color: C("#a3e4d7")
+		ColorButton:
+			background_color: C("#76d7c4")
+		ColorButton:
+			background_color: C("#48c9b0")
+		ColorButton:
+			background_color: C("#1abc9c")
+		ColorButton:
+			background_color: C("#17a589")
+		ColorButton:
+			background_color: C("#148f77")
+		ColorButton:
+			background_color: C("#117864")
+		ColorButton:
+			background_color: C("#0e6251")
+		ColorButton:
+			background_color: C("#e8f6f3")
+		ColorButton:
+			background_color: C("#d0ece7")
+		ColorButton:
+			background_color: C("#a2d9ce")
+		ColorButton:
+			background_color: C("#73c6b6")
+		ColorButton:
+			background_color: C("#45b39d")
+		ColorButton:
+			background_color: C("#16a085")
+		ColorButton:
+			background_color: C("#138d75")
+		ColorButton:
+			background_color: C("#117a65")
+		ColorButton:
+			background_color: C("#0e6655")
+		ColorButton:
+			background_color: C("#0b5345")
+
+	BoxLayout:
+		orientation: 'vertical'
+		height: root.height
+		x: 40
+		width: 20	
+
+		ColorButton:
+			background_color: C("#e9f7ef")
+		ColorButton:
+			background_color: C("#d4efdf")
+		ColorButton:
+			background_color: C("#a9dfbf")
+		ColorButton:
+			background_color: C("#7dcea0")
+		ColorButton:
+			background_color: C("#52be80")
+		ColorButton:
+			background_color: C("#27ae60")
+		ColorButton:
+			background_color: C("#229954")
+		ColorButton:
+			background_color: C("#1e8449")
+		ColorButton:
+			background_color: C("#196f3d")
+		ColorButton:
+			background_color: C("#145a32")
+		ColorButton:
+			background_color: C("#eafaf1")
+		ColorButton:
+			background_color: C("#d5f5e3")
+		ColorButton:
+			background_color: C("#abebc6")
+		ColorButton:
+			background_color: C("#82e0aa")
+		ColorButton:
+			background_color: C("#58d68d")
+		ColorButton:
+			background_color: C("#2ecc71")
+		ColorButton:
+			background_color: C("#28b463")
+		ColorButton:
+			background_color: C("#239b56")
+		ColorButton:
+			background_color: C("#1d8348")
+		ColorButton:
+			background_color: C("#186a3b")
+		ColorButton:
+			background_color: C("#fef9e7")
+		ColorButton:
+			background_color: C("#fcf3cf")
+		ColorButton:
+			background_color: C("#f9e79f")
+		ColorButton:
+			background_color: C("#f7dc6f")
+		ColorButton:
+			background_color: C("#f4d03f")
+		ColorButton:
+			background_color: C("#f1c40f")
+		ColorButton:
+			background_color: C("#d4ac0d")
+		ColorButton:
+			background_color: C("#b7950b")
+		ColorButton:
+			background_color: C("#9a7d0a")
+		ColorButton:
+			background_color: C("#7d6608")
+		ColorButton:
+			background_color: C("#fef5e7")
+		ColorButton:
+			background_color: C("#fdebd0")
+		ColorButton:
+			background_color: C("#fad7a0")
+		ColorButton:
+			background_color: C("#f8c471")
+		ColorButton:
+			background_color: C("#f5b041")
+		ColorButton:
+			background_color: C("#f39c12")
+		ColorButton:
+			background_color: C("#d68910")
+		ColorButton:
+			background_color: C("#b9770e")
+		ColorButton:
+			background_color: C("#9c640c")
+		ColorButton:
+			background_color: C("#7e5109")		
+
+	BoxLayout:
+		orientation: 'vertical'
+		height: root.height
+		x: 60
+		width: 20	
+
+		ColorButton:
+			background_color: C("#fdf2e9")
+		ColorButton:
+			background_color: C("#fae5d3")
+		ColorButton:
+			background_color: C("#f5cba7")
+		ColorButton:
+			background_color: C("#f0b27a")
+		ColorButton:
+			background_color: C("#eb984e")
+		ColorButton:
+			background_color: C("#e67e22")
+		ColorButton:
+			background_color: C("#ca6f1e")
+		ColorButton:
+			background_color: C("#af601a")
+		ColorButton:
+			background_color: C("#935116")
+		ColorButton:
+			background_color: C("#784212")
+		ColorButton:
+			background_color: C("#fbeee6")
+		ColorButton:
+			background_color: C("#f6ddcc")
+		ColorButton:
+			background_color: C("#edbb99")
+		ColorButton:
+			background_color: C("#e59866")
+		ColorButton:
+			background_color: C("#dc7633")
+		ColorButton:
+			background_color: C("#d35400")
+		ColorButton:
+			background_color: C("#ba4a00")
+		ColorButton:
+			background_color: C("#a04000")
+		ColorButton:
+			background_color: C("#873600")
+		ColorButton:
+			background_color: C("#6e2c00")
+		ColorButton:
+			background_color: C("#fdfefe")
+		ColorButton:
+			background_color: C("#fbfcfc")
+		ColorButton:
+			background_color: C("#f7f9f9")
+		ColorButton:
+			background_color: C("#f4f6f7")
+		ColorButton:
+			background_color: C("#f0f3f4")
+		ColorButton:
+			background_color: C("#ecf0f1")
+		ColorButton:
+			background_color: C("#d0d3d4")
+		ColorButton:
+			background_color: C("#b3b6b7")
+		ColorButton:
+			background_color: C("#979a9a")
+		ColorButton:
+			background_color: C("#7b7d7d")
+		ColorButton:
+			background_color: C("#f8f9f9")
+		ColorButton:
+			background_color: C("#f2f3f4")
+		ColorButton:
+			background_color: C("#e5e7e9")
+		ColorButton:
+			background_color: C("#d7dbdd")
+		ColorButton:
+			background_color: C("#cacfd2")
+		ColorButton:
+			background_color: C("#bdc3c7")
+		ColorButton:
+			background_color: C("#a6acaf")
+		ColorButton:
+			background_color: C("#909497")
+		ColorButton:
+			background_color: C("#797d7f")
+		ColorButton:
+			background_color: C("#626567")		
+
+	BoxLayout:
+		orientation: 'vertical'
+		height: root.height
+		x: 80
+		width: 20	
+
+		ColorButton:
+			background_color: C("#f4f6f6")
+		ColorButton:
+			background_color: C("#eaeded")
+		ColorButton:
+			background_color: C("#d5dbdb")
+		ColorButton:
+			background_color: C("#bfc9ca")
+		ColorButton:
+			background_color: C("#aab7b8")
+		ColorButton:
+			background_color: C("#95a5a6")
+		ColorButton:
+			background_color: C("#839192")
+		ColorButton:
+			background_color: C("#717d7e")
+		ColorButton:
+			background_color: C("#5f6a6a")
+		ColorButton:
+			background_color: C("#4d5656")
+		ColorButton:
+			background_color: C("#f2f4f4")
+		ColorButton:
+			background_color: C("#e5e8e8")
+		ColorButton:
+			background_color: C("#ccd1d1")
+		ColorButton:
+			background_color: C("#b2babb")
+		ColorButton:
+			background_color: C("#99a3a4")
+		ColorButton:
+			background_color: C("#7f8c8d")
+		ColorButton:
+			background_color: C("#707b7c")
+		ColorButton:
+			background_color: C("#616a6b")
+		ColorButton:
+			background_color: C("#515a5a")
+		ColorButton:
+			background_color: C("#424949")
+		ColorButton:
+			background_color: C("#ebedef")
+		ColorButton:
+			background_color: C("#d6dbdf")
+		ColorButton:
+			background_color: C("#aeb6bf")
+		ColorButton:
+			background_color: C("#85929e")
+		ColorButton:
+			background_color: C("#5d6d7e")
+		ColorButton:
+			background_color: C("#34495e")
+		ColorButton:
+			background_color: C("#2e4053")
+		ColorButton:
+			background_color: C("#283747")
+		ColorButton:
+			background_color: C("#212f3c")
+		ColorButton:
+			background_color: C("#1b2631")
+		ColorButton:
+			background_color: C("#eaecee")
+		ColorButton:
+			background_color: C("#d5d8dc")
+		ColorButton:
+			background_color: C("#abb2b9")
+		ColorButton:
+			background_color: C("#808b96")
+		ColorButton:
+			background_color: C("#566573")
+		ColorButton:
+			background_color: C("#2c3e50")
+		ColorButton:
+			background_color: C("#273746")
+		ColorButton:
+			background_color: C("#212f3d")
+		ColorButton:
+			background_color: C("#1c2833")
+		ColorButton:
+			background_color: C("#17202a")							
+
+
+
+
+
+
+
+
+
+
+
+
+
+

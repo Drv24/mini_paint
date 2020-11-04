@@ -1,0 +1,3 @@
+title=Paint
+author=Drv
+orientation=portrait
